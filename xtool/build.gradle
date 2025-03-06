@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
+    id 'maven-publish' // 确保应用插件
 }
-apply plugin: 'maven-publish'
 
 afterEvaluate {
     publishing {
@@ -9,7 +9,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.swn-dev'
                 artifactId = 'xtool'
-                version = '1.0.0'
+                version = '1.0.3'
                 afterEvaluate {
                     from components.findByName("release")
                 }
