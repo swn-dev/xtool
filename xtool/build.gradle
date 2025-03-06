@@ -7,10 +7,12 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-//                from components.release
                 groupId = 'com.github.swn-dev'
                 artifactId = 'xtool'
                 version = '1.0.0'
+                afterEvaluate {
+                    from components.findByName("release")
+                }
             }
         }
     }
